@@ -1,0 +1,141 @@
+import java.util.*;
+
+public class menuBillsList{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int menu_item,menu1=0,menu2=0,menu3=0;
+		char ans;
+		int sum = 0;
+		ArrayList<String> starter = new ArrayList<String>();
+		ArrayList<String> maindish = new ArrayList<String>();
+		ArrayList<String> dessert = new ArrayList<String>();
+		ArrayList<Integer> sprice = new ArrayList<Integer>();
+		ArrayList<Integer> mprice = new ArrayList<Integer>();
+		ArrayList<Integer> dprice = new ArrayList<Integer>();
+		List<Integer> total = new ArrayList<Integer>();
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.println("Menu:\n:1. Starters \n:2. Main course \n:3. Desserts");
+			menu_item=sc.nextInt();
+			switch (menu_item) {
+			case 1:
+				System.out.println("1:Manchurian\t\t 110/-");
+				System.out.println("2:Masala Papad \t\t 50/-");
+				System.out.println("3:Soup  90/-");
+				menu1=sc.nextInt();
+				switch (menu1) {
+				case 1:
+					System.out.println(" Manchurian \t\t 110/-");
+					starter.add("Manchurian 110/-");
+					starterprice.add(110);
+					
+					break;
+				case 2:
+					System.out.println("Masala Papad \t\t 50/-");
+					starter.add("Masala Papad  50/-");
+					starterprice.add(50);
+					
+					break;
+				case 3:
+					System.out.println("Soup \t\t 90/-");
+					starter.add("Soup  90/-");
+					starterprice.add(90);
+					
+					break;
+
+				default:
+					System.out.println("Please Enter Available Choice");
+					break;
+				}
+				break;
+			case 2:
+				System.out.println("1:Chole Bhature \t\t 250/-");
+				System.out.println("2:Fish Curry \t\t 300/-");
+				System.out.println("3:Veg Maratha  450/-");
+				menu2=sc.nextInt();
+				switch (menu2) {
+				case 1:
+					System.out.println("Chole Bhature \t\t 250/-");
+					mainDish.add("Chole Bhature  250/-");
+					mdprice.add(250);
+					
+					break;
+				case 2:
+					System.out.println("Fish Curry \t\t 300/-");
+					mainDish.add("Fish Curry  300/-");
+					mdprice.add(300);
+					
+					break;
+				case 3:
+					System.out.println("3:Veg Maratha \t\t 450/-");
+					mainDish.add("3:Veg Maratha  450/-");
+					mdprice.add(450);
+					
+					break;
+
+				default:
+					System.out.println("Please Enter Available Choice");
+					break;
+				}
+				
+				break;
+			case 3:
+				System.out.println("1:Chocolate \t\t 90Rs");
+				System.out.println("2:Rose \t\t 100Rs");
+				System.out.println("3:Pista \t\t 90Rs");
+				menu3=sc.nextInt();
+				switch (menu3) {
+				case 1:
+					System.out.println("Chocolate \t\t 90Rs");
+					dessert.add("Chocolate 90/-");
+					desrtprice.add(90);
+					
+					break;
+				case 2:
+					System.out.println("Rose \t\t 100Rs");
+					dessert.add("Rose 100/-");
+					desrtprice.add(100);
+					
+					break;
+				case 3:
+					System.out.println("Pista \t\t 90Rs");
+					dessert.add("Pista 90/-");
+					desrtprice.add(90);
+					
+					break;
+
+				default:
+					System.out.println("Please Enter Available Choice");
+					break;
+				}
+				
+				break;
+
+			default:
+				break;
+			}
+			System.out.println("Would you like to order something else? y/n");
+			ans=sc.next().charAt(0);
+		}
+		while(ans=='Y' || ans=='y');
+		System.out.println("Thanks For Coming!");
+		
+		total.addAll(starterprice);
+		total.addAll(mdprice);
+		total.addAll(desrtprice);
+		for (int i=0;i<total.size();i++) {
+			sum += total.get(i);
+		}
+		System.out.println("Starter Dish");
+		System.out.println(starter);
+		System.out.println("main Dish");
+		System.out.println(mainDish);
+		System.out.println("Dessert Dish");
+		System.out.println(dessert);
+	
+		System.out.println("Your bill is : "+sum);
+
+	}
+
+}
